@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
   return res.json({ message: "GET" })
 })
 
-router.post("/upload", upload.single("myFile"), async (req, res) => {
+router.post("/upload", upload.single("file"), async (req, res) => {
   try {
     if (!req.file)
       return res.status(400).json({ message: "Selected file must be uploaded" })
@@ -41,8 +41,7 @@ router.post("/upload", upload.single("myFile"), async (req, res) => {
     })
     res.status(200).json({
       id: file.id,
-      downloadPageLink: `${process.env.API_BASE_ENDPOINT_CLIENT}/download/${file._id}`,
-      
+      downloadPageLink: `${process.env.API_BASE_ENDPOINT_CLIENT}/api/files/download/${file._id}`,
     })
   } catch (err) {
     console.log(err)
