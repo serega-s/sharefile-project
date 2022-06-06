@@ -58,10 +58,7 @@ const Home: NextPage = () => {
 
         {/* Upload Button */}
         {!downloadPageLink && file && (
-          <button
-            className="w-44 bg-gray-900 my-5 p-2 rounded-md focus:outline-none"
-            onClick={handleUpload}
-          >
+          <button className="button" onClick={handleUpload}>
             {uploadState}
           </button>
         )}
@@ -70,10 +67,7 @@ const Home: NextPage = () => {
           <div className="p-2 text-center">
             <DownloadFile downloadPageLink={downloadPageLink} />
             {/* Email Form */}
-            <button
-              className="w-44 bg-gray-900 my-5 p-2 rounded-md focus:outline-none"
-              onClick={resetComponent}
-            >
+            <button className="button" onClick={resetComponent}>
               Upload New File
             </button>
           </div>
