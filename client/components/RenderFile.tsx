@@ -7,6 +7,7 @@ interface RenderFileProps {
 }
 
 const RenderFile: React.FC<RenderFileProps> = ({ file }) => {
+  console.log(file)
   return (
     <div className="flex items-center w-full p-4 my-2">
       <img

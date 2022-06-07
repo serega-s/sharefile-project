@@ -1,7 +1,8 @@
 import DownloadFile from "@components/DownloadFile"
+import EmailForm from "@components/EmailForm"
 import RenderFile from "@components/RenderFile"
 import axios from "axios"
-import DropZoneComponent from "components/DropZoneComponent"
+import DropZoneComponent from "@components/DropZoneComponent"
 import { UploadStateTypes } from "libs/types"
 import { NextPage } from "next"
 import { useState } from "react"
@@ -66,7 +67,7 @@ const Home: NextPage = () => {
         {downloadPageLink && (
           <div className="p-2 text-center">
             <DownloadFile downloadPageLink={downloadPageLink} />
-            {/* Email Form */}
+            <EmailForm id={id} />
             <button className="button" onClick={resetComponent}>
               Upload New File
             </button>

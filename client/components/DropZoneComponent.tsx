@@ -16,9 +16,10 @@ const DropZoneComponent: React.FC<DropZoneComponentProps> = ({ setFile }) => {
       onDrop,
       multiple: false,
       accept: {
-        "image/png": [".png"],
-        "text/jpeg": [".jpeg", ".jpg"],
-        "audio/mpeg": [".mp3"],
+        "image/*": [".jpeg", ".jpg", ".png"],
+        "audio/*": [".mp3"],
+        "application/pdf": [".pdf"],
+        "application/msword": [".doc"],
       },
     })
 
@@ -44,7 +45,7 @@ const DropZoneComponent: React.FC<DropZoneComponentProps> = ({ setFile }) => {
             <>
               <p>Drag & Drop Files Here</p>
               <p className="mt-2 text-base text-gray-300">
-                Only JPEG, PNG & MP3 supported
+                Only JPEG, PNG, MP3, PDF & DOC supported
               </p>
             </>
           )}
